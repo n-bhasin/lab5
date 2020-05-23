@@ -20,3 +20,12 @@ test("Joke component receives props and then render the text", () => {
     "The funniest joke of this year."
   );
 });
+
+test("Joke component receives props and then render the text", () => {
+  const { getByTestId } = render(
+    <Joke text="Test jenkins." />
+  );
+  expect(getByTestId("joke-text")).toHaveTextContent(
+    "Test jenkins."
+  );
+});
